@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import Sample1 from './Sample1';
-
+// import Sample1 from './Sample1';
+import Sample2 from './Sample2';
 function App() {
+  const [count,setCount]=useState(0);
+  function handleClick(){
+    setCount(count+1);
+  }
+
   return (
     <div className="App">
-      <Sample1 value={12} min={10} max={20}/>
+      <button onClick={handleClick}>Click {count}</button>
+      <Sample2 count={count}/>
     </div>
   );
 }
